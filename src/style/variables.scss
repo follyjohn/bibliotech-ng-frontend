@@ -1,0 +1,29 @@
+// Variables
+//
+.light {
+  --main-bg: #fff;
+  --card-bg: #e9eaed;
+  --textColor: #333;
+  --altTextColor: #fff;
+  --accent: #9b2eff;
+  --altAccent: #7214c9;
+}
+
+.dark {
+  --main-bg: rgb(18, 18, 18);
+  --card-bg: #2d2e30;
+  --textColor: rgb(255, 255, 255);
+  --altTextColor: #333;
+  --accent: #9b2eff;
+  --altAccent: #6b14bd;
+}
+
+$theme-colors: (primary: #E01C5B,
+  secondary: #F7471E,
+  light: #F9F9FA,
+  dark: #2d2e30,
+  info: #606266,
+  success: #28a745,
+  warning: #ffc107,
+  danger: #dc3545
+);

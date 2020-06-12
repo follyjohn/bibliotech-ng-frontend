@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+@import "./variables.scss";
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+//
+$enable-rounded: true !default;
+$enable-shadows: true;
+$enable-transitions: true;
+$enable-hover-media-query: false;
+$enable-grid-classes: true;
+$enable-print-styles: true;
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: var(--textColor);
+}
+
+$border-radius-sm: 0.7rem;
+$border-radius: 3rem;
+$border-radius-lg: 2rem;
+
+@import "bootstrap";
+
+html,
+p,
+body {
+  height: 100%;
+  background-color: var(--main-bg);
+}
+
+mat-icon {
+  margin-top: 0.3125em;
+}
+
+.aligned-with-icon {
+  position: relative;
+  top: -0.525em;
+  margin-left: 0.3125em;
+}
+
+.card-bg {
+  background-color: var(--card-bg);
+  color: var(--textColor);
+}
