@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/common/auth/login/login.component';
 import { RegisterComponent } from './pages/common/auth/register/register.component';
 import { PasswordComponent } from './pages/common/auth/password/password.component';
 import { DashboardComponent } from './pages/bibliotech/dashboard/dashboard.component';
+import { AuthGuard } from './services/auth-guard.service';
 
 
 const routes: Routes = [
@@ -12,7 +13,13 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'password', component: PasswordComponent },
-  { path: 'dashboard', component: DashboardComponent }
+  {
+    path: 'dashboard',
+    canActivate: [
+      AuthGuard
+    ],
+    component: DashboardComponent
+  }
 ];
 
 @NgModule({
