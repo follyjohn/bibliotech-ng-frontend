@@ -26,6 +26,7 @@ export class RegisterComponent implements OnInit {
       email: ['', Validators.required],
       password: ['', Validators.required],
     });
+     // TODO:make validation
   }
   onSubmitForm() {
     const formValue = this.registerForm.value;

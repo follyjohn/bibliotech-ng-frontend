@@ -1,0 +1,43 @@
+#sidebar {
+	overflow: scroll;
+	min-width: 250px;
+	max-width: 250px;
+	// height: 50vh;
+	position: fixed;
+	z-index: 999;
+	top: 6.4rem;
+	// background: #7386D5;
+	color: #fff;
+	transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+	transform-origin: bottom left;
+}
+
+::-webkit-scrollbar {
+	// width: 5px;
+ display: none;
+}
+
+.dropdown-toggle::after {
+	display: none;
+}
+
+#sidebar.active {
+	margin-left: -250px;
+	transform: rotateY(100deg);
+}
+
+#sidebar .sidebar-header {
+	padding: 20px;
+	background: #6d7fcc;
+}
+
+#sidebar ul p {
+	color: #fff;
+	padding: 10px;
+}
+
+#sidebar ul li a {
+	padding: 10px;
+	font-size: 1.1em;
+	display: block;
+}

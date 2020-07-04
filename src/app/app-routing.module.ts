@@ -6,7 +6,10 @@ import { RegisterComponent } from './pages/common/auth/register/register.compone
 import { PasswordComponent } from './pages/common/auth/password/password.component';
 import { DashboardComponent } from './pages/bibliotech/dashboard/dashboard.component';
 import { AuthGuard } from './services/auth-guard.service';
-
+import { TagsListComponent } from './pages/bibliotech/tag/tags-list/tags-list.component';
+import { TagsCreateComponent } from './pages/bibliotech/tag/tags-create/tags-create.component';
+import { TagsDetailsComponent } from './pages/bibliotech/tag/tags-details/tags-details.component';
+import { TagsUpdateComponent } from './pages/bibliotech/tag/tags-update/tags-update.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,12 +21,41 @@ const routes: Routes = [
     canActivate: [
       AuthGuard
     ],
+    // outlet: 'ListComponent',
     component: DashboardComponent
+  },
+  {
+    path: 'dashboard/tag',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsListComponent
+  },
+  {
+    path: 'dashboard/tag/:id/update',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsUpdateComponent
+  },
+  {
+    path: 'dashboard/new/tag',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsCreateComponent
+  },
+  {
+    path: 'dashboard/tag/:id',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsDetailsComponent
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+exports: [RouterModule]
 })
 export class AppRoutingModule { }

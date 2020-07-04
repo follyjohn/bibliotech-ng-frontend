@@ -1,8 +1,10 @@
 @import "./../../../../style/variables.scss";
 
 .navbar {
-
+  background-color: var(--main-bg);
+  opacity: 0.98888;
   .navbar-brand{
+    color: var(--textColor);
   }
 
   .text-link{
@@ -21,7 +23,50 @@
   }
 
 
+  #sidebarCollapse {
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+}
 
+#sidebarCollapse:focus {
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	background: #202124!important;
+}
+
+#content.active {
+	width: 100%;
+}
+
+#sidebarCollapse span {
+	width: 80%;
+	height: 2px;
+	margin: 0 auto;
+	display: block;
+	background: var(--textColor);
+	transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+	transition-delay: 0.2s;
+}
+
+#sidebarCollapse span:first-of-type {
+	transform: rotate(45deg) translate(2px, 2px);
+}
+
+#sidebarCollapse span:nth-of-type(2) {
+	opacity: 0;
+}
+
+#sidebarCollapse span:last-of-type {
+	transform: rotate(-45deg) translate(1px, -1px);
+}
+
+#sidebarCollapse.active span {
+	transform: none;
+	opacity: 1;
+	margin: 5px auto;
+}
 
 
 

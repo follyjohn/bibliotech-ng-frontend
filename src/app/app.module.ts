@@ -19,6 +19,20 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './pages/bibliotech/dashboard/dashboard.component';
 import { AuthInterceptor } from './interceptor/auth-interceptor';
+import { SidebarComponent } from './components/common/sidebar/sidebar.component';
+import { BreadcrumbComponent } from './components/bibliotech/breadcrumb/breadcrumb.component';
+import { TagListComponent } from './components/bibliotech/tag/tag-list/tag-list.component';
+import { TagCreateComponent } from './components/bibliotech/tag/tag-create/tag-create.component';
+import { TagDetailComponent } from './components/bibliotech/tag/tag-detail/tag-detail.component';
+import { DomainDetailComponent } from './components/bibliotech/domain/domain-detail/domain-detail.component';
+import { DomainListComponent } from './components/bibliotech/domain/domain-list/domain-list.component';
+import { DomainCreateComponent } from './components/bibliotech/domain/domain-create/domain-create.component';
+import { TagsListComponent } from './pages/bibliotech/tag/tags-list/tags-list.component';
+import { TagsCreateComponent } from './pages/bibliotech/tag/tags-create/tags-create.component';
+import { TagsDetailsComponent } from './pages/bibliotech/tag/tags-details/tags-details.component';
+import { TagService } from 'src/app/services/tag.service';
+import { TagsUpdateComponent } from './pages/bibliotech/tag/tags-update/tags-update.component';
+import { TagUpdateComponent } from './components/bibliotech/tag/tag-update/tag-update.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +43,20 @@ import { AuthInterceptor } from './interceptor/auth-interceptor';
     PasswordComponent,
     NavbarComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    SidebarComponent,
+    BreadcrumbComponent,
+    TagListComponent,
+    TagCreateComponent,
+    TagDetailComponent,
+    DomainDetailComponent,
+    DomainListComponent,
+    DomainCreateComponent,
+    TagsListComponent,
+    TagsCreateComponent,
+    TagsDetailsComponent,
+    TagsUpdateComponent,
+    TagUpdateComponent
   ],
   imports: [
 
@@ -43,7 +70,7 @@ import { AuthInterceptor } from './interceptor/auth-interceptor';
     HttpClientModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-              AuthGuard],
+              AuthGuard, TagService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="modal fade" id="deletModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">SUPPRIMER L'EC</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span
+              aria-hidden="true">&times;</span> </button>
+        </div>
+        <div class="modal-body"> Est vous sur de vouloir suprimer cette unité d'enseignement ? </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">NON</button>
+          <a id="delete" class="btn btn-primary" href="supprimer-ec.php?id=" role="button">OUI</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <a role="button" routerLink="/dashboard/new/tag" class="btn btn-primary rounded-sm">
+        new
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container my-4">
+      <table id="table_id" class="display table table-striped table-hover table-borderless" style="width:100%">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Option</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+          *ngFor="let tag of tags">
+            <td>{{ tag._id }}</td>
+            <td>{{ tag.name }}</td>
+            <td>{{ tag.description }}</td>
+            <td>
+              <button class="btn btn-danger rounded-lg" (click)="onDeleteTag(tag._id)">D</button>
+              <button class="btn btn-danger rounded-lg ml-1" (click)="openToEditTag(tag._id)">E</button>
+              <button class="btn btn-danger rounded-lg ml-1" (click)="openToModify(tag._id)">U</button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Option</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>

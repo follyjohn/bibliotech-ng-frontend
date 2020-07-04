@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
       email: ['', Validators.required],
       password: ['', Validators.required],
     });
+    // TODO:make validation
   }
   onSubmitForm() {
     const formValue = this.loginForm.value;
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit {
     const password = formValue.password;
     this.auth.login(email, password).then(
       () => {
+        
         this.router.navigate(['/dashboard']);
       }
     ).catch(
