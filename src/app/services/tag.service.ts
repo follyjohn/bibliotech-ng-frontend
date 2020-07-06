@@ -50,9 +50,17 @@ export class TagService {
     });
   }
 
-  createNewTag(tag: Tag) {
+  createNewTag(tag: Tag, createdBy: string) {
+    const name = tag.name;
+    const description = tag.description;
     return new Promise((resolve, reject) => {
-      this.http.post('http://localhost:3000/api/tag/', tag).subscribe(
+      this.http.post('http://localhost:3000/api/tag/',
+        {
+          name,
+          description,
+          createdBy
+        }
+      ).subscribe(
         (response) => {
           resolve(response);
         },

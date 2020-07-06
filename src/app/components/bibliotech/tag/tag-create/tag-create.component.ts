@@ -34,8 +34,9 @@ export class TagCreateComponent implements OnInit {
     const tag = new Tag();
     tag.name = formValue.name;
     tag.description = formValue.description;
-    tag.createdBy = String(JSON.parse(localStorage.getItem('authData')).userId);
-    this.tagService.createNewTag(tag).then(
+    // TODO: tag crated by id
+    const userId = String(JSON.parse(localStorage.getItem('authData')).userId);
+    this.tagService.createNewTag(tag, userId).then(
       () => {
         this.newTagForm.reset();
         this.router.navigate(['/dashboard/tag']);
