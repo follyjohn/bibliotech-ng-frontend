@@ -17,13 +17,12 @@ export class AuthService {
     this.isAuth$.next(!!JSON.parse(localStorage.getItem('authData')));
   }
 
-  createNewUser(firstName: string, lastName: string, email: string, password: string) {
+  createNewUser(userName: string, email: string, password: string) {
     return new Promise((resolve, reject) => {
       this.http.post(
-        'http://localhost:3000/api/admin/auth/signup',
+        'http://localhost:3000/api/auth/signup',
         {
-          firstName,
-          lastName,
+          userName,
           email,
           password
         })
@@ -49,7 +48,7 @@ export class AuthService {
   login(email: string, password: string) {
     return new Promise((resolve, reject) => {
       this.http.post(
-        'http://localhost:3000/api/admin/auth/login',
+        'http://localhost:3000/api/auth/login',
         {
           email,
           password
@@ -61,6 +60,7 @@ export class AuthService {
             this.isAuth$.next(true);
             // TODO:verifier "remeber me"
             localStorage.setItem('authData', JSON.stringify(authData));
+            localStorage.setItem('userId', authData.userId);
             resolve();
           },
           (error) => {
@@ -72,6 +72,7 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('authData');
+    localStorage.removeItem('userId');
     this.isAuth$.next(false);
     this.userId = null;
     this.token = null;

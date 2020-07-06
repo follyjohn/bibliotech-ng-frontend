@@ -15,41 +15,20 @@
       </ul>
     </li>
     <li>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </li>
+    <li>
       <a role="button" routerLink="/dashboard/tag">Tag</a>
     </li>
     <li>
       <a role="button" routerLink="/dashboard">Categorie</a>
     </li>
     <li>
-      <a href="#folioSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-      <ul class="collapse list-unstyled px-3" id="folioSubmenu">
-        <li>
-          <a href="#">Page 1</a>
-        </li>
-        <li>
-          <a href="#">Page 2</a>
-        </li>
-        <li>
-          <a href="#">Page 3</a>
-        </li>
-      </ul>
+      <button class="btn btn-outline-primary rounded-sm" (click)="onLogout()">Logout</button>
     </li>
-    <li>
-      <a href="#contSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-      <ul class="collapse list-unstyled px-3" id="contSubmenu">
-        <li>
-          <a href="#">Page 1</a>
-        </li>
-        <li>
-          <a href="#">Page 2</a>
-        </li>
-        <li>
-          <a href="#">Page 3</a>
-        </li>
-      </ul>
-    </li>
-    <!-- <li>
-      <button class="btn btn-primary" (click)="onLogout()">Logout</button>
-    </li> -->
   </ul>
 </nav>

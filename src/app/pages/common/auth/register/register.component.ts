@@ -21,8 +21,7 @@ export class RegisterComponent implements OnInit {
   }
   initForm() {
     this.registerForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
+      userName: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
     });
@@ -31,11 +30,10 @@ export class RegisterComponent implements OnInit {
   onSubmitForm() {
     const formValue = this.registerForm.value;
 
-    const firstName = formValue.firstName;
-    const lastName = formValue.lastName;
+    const userName = formValue.userName;
     const email = formValue.email;
     const password = formValue.password;
-    this.auth.createNewUser(firstName, lastName, email, password).then(
+    this.auth.createNewUser(userName, email, password).then(
       () => {
         this.router.navigate(['/dashboard']);
       }

@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Tag } from '../models/Tag.model';
 import { Subject } from 'rxjs';
 
-const baseUrl = 'http://localhost:3000/api/admin/tag';
+const baseUrl = 'http://localhost:3000/api/tag';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class TagService {
   public tags: Tag[] = [];
 
   getAllTag(){
-    this.http.get('http://localhost:3000/api/admin/tag').subscribe(
+    this.http.get('http://localhost:3000/api/tag').subscribe(
       (tags: Tag[]) => {
         if (tags) {
           this.tags = tags;
@@ -39,7 +39,7 @@ export class TagService {
 
   getTagById(id: string) {
     return new Promise((resolve, reject) => {
-      this.http.get('http://localhost:3000/api/admin/tag/' + id).subscribe(
+      this.http.get('http://localhost:3000/api/tag/' + id).subscribe(
         (response) => {
           resolve(response);
         },
@@ -52,7 +52,7 @@ export class TagService {
 
   createNewTag(tag: Tag) {
     return new Promise((resolve, reject) => {
-      this.http.post('http://localhost:3000/api/admin/tag/', tag).subscribe(
+      this.http.post('http://localhost:3000/api/tag/', tag).subscribe(
         (response) => {
           resolve(response);
         },
@@ -65,7 +65,7 @@ export class TagService {
 
   modifyTag(id: string, tag: Tag) {
     return new Promise((resolve, reject) => {
-      this.http.put('http://localhost:3000/api/admin/tag/' + id, tag).subscribe(
+      this.http.put('http://localhost:3000/api/tag/' + id, tag).subscribe(
         (response) => {
           resolve(response);
         },
@@ -78,7 +78,7 @@ export class TagService {
 
   deleteTag(id: string) {
     return new Promise((resolve, reject) => {
-      this.http.delete('http://localhost:3000/api/admin/tag/' + id).subscribe(
+      this.http.delete('http://localhost:3000/api/tag/' + id).subscribe(
         (response) => {
           resolve(response);
         },

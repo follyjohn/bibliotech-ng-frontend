@@ -12,11 +12,13 @@ import { Tag } from 'src/app/models/Tag.model';
 export class TagCreateComponent implements OnInit {
   errorMessage: string;
   newTagForm: FormGroup;
+  test: string;
   constructor(private formBuilder: FormBuilder,
               private router: Router,
               private tagService: TagService) { }
 
   ngOnInit(): void {
+    this.test = JSON.parse(localStorage.getItem('authData')).userId;
     this.initForm();
   }
   initForm() {
@@ -32,6 +34,7 @@ export class TagCreateComponent implements OnInit {
     const tag = new Tag();
     tag.name = formValue.name;
     tag.description = formValue.description;
+    tag.createdBy = String(JSON.parse(localStorage.getItem('authData')).userId);
     this.tagService.createNewTag(tag).then(
       () => {
         this.newTagForm.reset();

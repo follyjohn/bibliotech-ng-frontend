@@ -24,6 +24,123 @@ const routes: Routes = [
     // outlet: 'ListComponent',
     component: DashboardComponent
   },
+  // permission routes
+  {
+    path: 'dashboard/permission',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsListComponent
+  },
+  {
+    path: 'dashboard/permission/:id/update',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsUpdateComponent
+  },
+  {
+    path: 'dashboard/permission/new',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsCreateComponent
+  },
+  {
+    path: 'dashboard/permission/:id',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsDetailsComponent
+  },
+  // permission routes
+  {
+    path: 'dashboard/permission',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsListComponent
+  },
+  {
+    path: 'dashboard/permission/:id/update',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsUpdateComponent
+  },
+  {
+    path: 'dashboard/permission/new',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsCreateComponent
+  },
+  {
+    path: 'dashboard/permission/:id',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsDetailsComponent
+  },
+  // permission routes
+  {
+    path: 'dashboard/permission',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsListComponent
+  },
+  {
+    path: 'dashboard/permission/:id/update',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsUpdateComponent
+  },
+  {
+    path: 'dashboard/permission/new',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsCreateComponent
+  },
+  {
+    path: 'dashboard/permission/:id',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsDetailsComponent
+  },
+  // permission routes
+  {
+    path: 'dashboard/permission',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsListComponent
+  },
+  {
+    path: 'dashboard/permission/:id/update',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsUpdateComponent
+  },
+  {
+    path: 'dashboard/permission/new',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsCreateComponent
+  },
+  {
+    path: 'dashboard/permission/:id',
+    canActivate: [
+      AuthGuard
+    ],
+    component: TagsDetailsComponent
+  },
+  // tag routes
   {
     path: 'dashboard/tag',
     canActivate: [
@@ -39,7 +156,7 @@ const routes: Routes = [
     component: TagsUpdateComponent
   },
   {
-    path: 'dashboard/new/tag',
+    path: 'dashboard/tag/new',
     canActivate: [
       AuthGuard
     ],
@@ -51,7 +168,7 @@ const routes: Routes = [
       AuthGuard
     ],
     component: TagsDetailsComponent
-  }
+  },
 ];
 
 @NgModule({
