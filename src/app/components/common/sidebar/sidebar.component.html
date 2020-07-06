@@ -1,16 +1,16 @@
 <nav id="sidebar" class="bg-dark rounded-sm">
   <ul class="list-unstyled components px-3 pt-4">
     <li class="active">
-      <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">User</a>
+      <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Auth</a>
       <ul class="collapse list-unstyled px-3" id="homeSubmenu">
         <li>
-          <a href="#">User</a>
+          <a routerLink="/user/list">User</a>
         </li>
         <li>
-          <a href="#">Role</a>
+          <a routerLink="/role/list">Role</a>
         </li>
         <li>
-          <a href="#">Privilege</a>
+          <a routerLink="/permission/list">Permission</a>
         </li>
       </ul>
     </li>
@@ -22,10 +22,10 @@
       </div>
     </li>
     <li>
-      <a role="button" routerLink="/dashboard/tag">Tag</a>
+      <a role="button" routerLink="/tag/list">Tag</a>
     </li>
     <li>
-      <a role="button" routerLink="/dashboard">Categorie</a>
+      <a role="button" routerLink="/domain/list">Domain</a>
     </li>
     <li>
       <button class="btn btn-outline-primary rounded-sm" (click)="onLogout()">Logout</button>

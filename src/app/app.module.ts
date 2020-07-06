@@ -36,6 +36,35 @@ import { TagUpdateComponent } from './components/bibliotech/tag/tag-update/tag-u
 import { DomainService } from './services/domain.service';
 import { RoleService } from './services/role.service';
 import { PermissionService } from './services/permission.service';
+import { RoleListComponent } from './components/bibliotech/role/role-list/role-list.component';
+import { RolesListComponent } from './pages/bibliotech/role/roles-list/roles-list.component';
+import { RoleCreateComponent } from './components/bibliotech/role/role-create/role-create.component';
+import { RolesCreateComponent } from './pages/bibliotech/role/roles-create/roles-create.component';
+import { RoleDetailComponent } from './components/bibliotech/role/role-detail/role-detail.component';
+import { RolesDetailComponent } from './pages/bibliotech/role/roles-detail/roles-detail.component';
+import { RoleUpdateComponent } from './components/bibliotech/role/role-update/role-update.component';
+import { RolesUpdateComponent } from './pages/bibliotech/role/roles-update/roles-update.component';
+import { DomainsListComponent } from './pages/bibliotech/domain/domains-list/domains-list.component';
+import { DomainsCreateComponent } from './pages/bibliotech/domain/domains-create/domains-create.component';
+import { DomainsDetailComponent } from './pages/bibliotech/domain/domains-detail/domains-detail.component';
+import { DomainUpdateComponent } from './components/bibliotech/domain/domain-update/domain-update.component';
+import { DomainsUpdateComponent } from './pages/bibliotech/domain/domains-update/domains-update.component';
+import { PermissionListComponent } from './components/bibliotech/permission/permission-list/permission-list.component';
+import { PermissionsListComponent } from './pages/bibliotech/permission/permissions-list/permissions-list.component';
+import { PermissionCreateComponent } from './components/bibliotech/permission/permission-create/permission-create.component';
+import { PermissionsCreateComponent } from './pages/bibliotech/permission/permissions-create/permissions-create.component';
+import { PermissionDetailComponent } from './components/bibliotech/permission/permission-detail/permission-detail.component';
+import { PermissionsDetailComponent } from './pages/bibliotech/permission/permissions-detail/permissions-detail.component';
+import { PermissionUpdateComponent } from './components/bibliotech/permission/permission-update/permission-update.component';
+import { PermissionsUpdateComponent } from './pages/bibliotech/permission/permissions-update/permissions-update.component';
+import { UserListComponent } from './components/bibliotech/user/user-list/user-list.component';
+import { UsersListComponent } from './pages/bibliotech/user/users-list/users-list.component';
+import { UserCreateComponent } from './components/bibliotech/user/user-create/user-create.component';
+import { UsersCreateComponent } from './pages/bibliotech/user/users-create/users-create.component';
+import { UserDetailComponent } from './components/bibliotech/user/user-detail/user-detail.component';
+import { UsersDetailComponent } from './pages/bibliotech/user/users-detail/users-detail.component';
+import { UserUpdateComponent } from './components/bibliotech/user/user-update/user-update.component';
+import { UsersUpdateComponent } from './pages/bibliotech/user/users-update/users-update.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +87,36 @@ import { PermissionService } from './services/permission.service';
     TagsCreateComponent,
     TagsDetailsComponent,
     TagsUpdateComponent,
-    TagUpdateComponent
+    TagUpdateComponent,
+    RoleListComponent,
+    RolesListComponent,
+    RoleCreateComponent,
+    RolesCreateComponent,
+    RoleDetailComponent,
+    RolesDetailComponent,
+    RoleUpdateComponent,
+    RolesUpdateComponent,
+    DomainsListComponent,
+    DomainsCreateComponent,
+    DomainsDetailComponent,
+    DomainUpdateComponent,
+    DomainsUpdateComponent,
+    PermissionListComponent,
+    PermissionsListComponent,
+    PermissionCreateComponent,
+    PermissionsCreateComponent,
+    PermissionDetailComponent,
+    PermissionsDetailComponent,
+    PermissionUpdateComponent,
+    PermissionsUpdateComponent,
+    UserListComponent,
+    UsersListComponent,
+    UserCreateComponent,
+    UsersCreateComponent,
+    UserDetailComponent,
+    UsersDetailComponent,
+    UserUpdateComponent,
+    UsersUpdateComponent
   ],
   imports: [
     BrowserModule,

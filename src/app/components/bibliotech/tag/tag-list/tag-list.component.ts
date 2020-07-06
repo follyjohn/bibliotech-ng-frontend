@@ -57,10 +57,10 @@ export class TagListComponent implements OnInit, OnDestroy {
   }
 
   openToEditTag(id: string) {
-    this.router.navigate(['/dashboard/tag/' + id]);
+    this.router.navigate(['/tag/' + id]);
   }
 
   openToModify(id: string) {
-    this.router.navigate(['/dashboard/tag/' + id + '/update']);
+    this.router.navigate(['/tag/' + id + '/update']);
   }
 }

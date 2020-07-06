@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Permission } from '../models/Permission.model';
 import { Subject } from 'rxjs';
 
-const baseUrl = 'http://localhost:3000/api/permission';
+const baseUrl = 'http://localhost:3000/api/permission/';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ const baseUrl = 'http://localhost:3000/api/permission';
 export class PermissionService {
 
   constructor(private router: Router,
-    private http: HttpClient) {
+              private http: HttpClient) {
   }
 
   public permissions$ = new Subject<Permission[]>();

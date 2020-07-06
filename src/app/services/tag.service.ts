@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Tag } from '../models/Tag.model';
 import { Subject } from 'rxjs';
 
-const baseUrl = 'http://localhost:3000/api/tag';
+const baseUrl = 'http://localhost:3000/api/tag/';
 
 @Injectable({
   providedIn: 'root'

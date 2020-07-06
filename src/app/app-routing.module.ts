@@ -10,6 +10,22 @@ import { TagsListComponent } from './pages/bibliotech/tag/tags-list/tags-list.co
 import { TagsCreateComponent } from './pages/bibliotech/tag/tags-create/tags-create.component';
 import { TagsDetailsComponent } from './pages/bibliotech/tag/tags-details/tags-details.component';
 import { TagsUpdateComponent } from './pages/bibliotech/tag/tags-update/tags-update.component';
+import { PermissionsListComponent } from './pages/bibliotech/permission/permissions-list/permissions-list.component';
+import { PermissionsUpdateComponent } from './pages/bibliotech/permission/permissions-update/permissions-update.component';
+import { PermissionsCreateComponent } from './pages/bibliotech/permission/permissions-create/permissions-create.component';
+import { RolesListComponent } from './pages/bibliotech/role/roles-list/roles-list.component';
+import { RolesUpdateComponent } from './pages/bibliotech/role/roles-update/roles-update.component';
+import { RolesCreateComponent } from './pages/bibliotech/role/roles-create/roles-create.component';
+import { UsersListComponent } from './pages/bibliotech/user/users-list/users-list.component';
+import { UsersUpdateComponent } from './pages/bibliotech/user/users-update/users-update.component';
+import { UsersCreateComponent } from './pages/bibliotech/user/users-create/users-create.component';
+import { PermissionsDetailComponent } from './pages/bibliotech/permission/permissions-detail/permissions-detail.component';
+import { RolesDetailComponent } from './pages/bibliotech/role/roles-detail/roles-detail.component';
+import { UsersDetailComponent } from './pages/bibliotech/user/users-detail/users-detail.component';
+import { DomainsListComponent } from './pages/bibliotech/domain/domains-list/domains-list.component';
+import { DomainsCreateComponent } from './pages/bibliotech/domain/domains-create/domains-create.component';
+import { DomainsDetailComponent } from './pages/bibliotech/domain/domains-detail/domains-detail.component';
+import { DomainsUpdateComponent } from './pages/bibliotech/domain/domains-update/domains-update.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,144 +42,144 @@ const routes: Routes = [
   },
   // permission routes
   {
-    path: 'dashboard/permission',
+    path: 'permission/list',
     canActivate: [
       AuthGuard
     ],
-    component: TagsListComponent
+    component: PermissionsListComponent
   },
   {
-    path: 'dashboard/permission/:id/update',
+    path: 'permission/:id/update',
     canActivate: [
       AuthGuard
     ],
-    component: TagsUpdateComponent
+    component: PermissionsUpdateComponent
   },
   {
-    path: 'dashboard/permission/new',
+    path: 'permission/new',
     canActivate: [
       AuthGuard
     ],
-    component: TagsCreateComponent
+    component: PermissionsCreateComponent
   },
   {
-    path: 'dashboard/permission/:id',
+    path: 'permission/:id',
     canActivate: [
       AuthGuard
     ],
-    component: TagsDetailsComponent
+    component: PermissionsDetailComponent
   },
-  // permission routes
+  // roles routes
   {
-    path: 'dashboard/permission',
+    path: 'role/list',
     canActivate: [
       AuthGuard
     ],
-    component: TagsListComponent
-  },
-  {
-    path: 'dashboard/permission/:id/update',
-    canActivate: [
-      AuthGuard
-    ],
-    component: TagsUpdateComponent
+    component: RolesListComponent
   },
   {
-    path: 'dashboard/permission/new',
+    path: 'role/:id/update',
     canActivate: [
       AuthGuard
     ],
-    component: TagsCreateComponent
+    component: RolesUpdateComponent
   },
   {
-    path: 'dashboard/permission/:id',
+    path: 'role/new',
     canActivate: [
       AuthGuard
     ],
-    component: TagsDetailsComponent
-  },
-  // permission routes
-  {
-    path: 'dashboard/permission',
-    canActivate: [
-      AuthGuard
-    ],
-    component: TagsListComponent
+    component: RolesCreateComponent
   },
   {
-    path: 'dashboard/permission/:id/update',
+    path: 'role/:id',
     canActivate: [
       AuthGuard
     ],
-    component: TagsUpdateComponent
+    component: RolesDetailComponent
+  },
+  // user routes
+  {
+    path: 'user/list',
+    canActivate: [
+      AuthGuard
+    ],
+    component: UsersListComponent
   },
   {
-    path: 'dashboard/permission/new',
+    path: 'user/:id/update',
     canActivate: [
       AuthGuard
     ],
-    component: TagsCreateComponent
+    component: UsersUpdateComponent
   },
   {
-    path: 'dashboard/permission/:id',
+    path: 'user/new',
     canActivate: [
       AuthGuard
     ],
-    component: TagsDetailsComponent
-  },
-  // permission routes
-  {
-    path: 'dashboard/permission',
-    canActivate: [
-      AuthGuard
-    ],
-    component: TagsListComponent
+    component: UsersCreateComponent
   },
   {
-    path: 'dashboard/permission/:id/update',
+    path: 'user/:id',
     canActivate: [
       AuthGuard
     ],
-    component: TagsUpdateComponent
+    component: UsersDetailComponent
+  },
+  // domain routes
+  {
+    path: 'domain/list',
+    canActivate: [
+      AuthGuard
+    ],
+    component: DomainsListComponent
   },
   {
-    path: 'dashboard/permission/new',
+    path: 'domain/:id/update',
     canActivate: [
       AuthGuard
     ],
-    component: TagsCreateComponent
+    component: DomainsUpdateComponent
   },
   {
-    path: 'dashboard/permission/:id',
+    path: 'domain/new',
     canActivate: [
       AuthGuard
     ],
-    component: TagsDetailsComponent
+    component: DomainsCreateComponent
+  },
+  {
+    path: 'domain/:id',
+    canActivate: [
+      AuthGuard
+    ],
+    component: DomainsDetailComponent
   },
   // tag routes
   {
-    path: 'dashboard/tag',
+    path: 'tag/list',
     canActivate: [
       AuthGuard
     ],
     component: TagsListComponent
   },
   {
-    path: 'dashboard/tag/:id/update',
+    path: 'tag/:id/update',
     canActivate: [
       AuthGuard
     ],
     component: TagsUpdateComponent
   },
   {
-    path: 'dashboard/tag/new',
+    path: 'tag/new',
     canActivate: [
       AuthGuard
     ],
     component: TagsCreateComponent
   },
   {
-    path: 'dashboard/tag/:id',
+    path: 'tag/:id',
     canActivate: [
       AuthGuard
     ],

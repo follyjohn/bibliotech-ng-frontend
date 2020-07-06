@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Domain } from '../models/Domain.model';
 import { Subject } from 'rxjs';
 
-const baseUrl = 'http://localhost:3000/api/domain';
+const baseUrl = 'http://localhost:3000/api/domain/';
 
 @Injectable({
   providedIn: 'root'

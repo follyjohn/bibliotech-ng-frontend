@@ -39,7 +39,7 @@ export class TagCreateComponent implements OnInit {
     this.tagService.createNewTag(tag, userId).then(
       () => {
         this.newTagForm.reset();
-        this.router.navigate(['/dashboard/tag']);
+        this.router.navigate(['/tag/list']);
       }
     ).catch(
       (error) => {

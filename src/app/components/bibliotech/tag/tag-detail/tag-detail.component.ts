@@ -15,7 +15,7 @@ export class TagDetailComponent implements OnInit {
 
   private tagSub: Subscription;
   private errorMessage: string;
-  constructor(private route: ActivatedRoute,private router: Router, private tagService: TagService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private tagService: TagService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(

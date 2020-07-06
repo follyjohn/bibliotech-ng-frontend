@@ -1,0 +1,9 @@
+ng g c components/bibliotech/user/user-list
+ng g c pages/bibliotech/user/users-list
+ng g c components/bibliotech/user/user-create
+ng g c pages/bibliotech/user/users-create
+ng g c components/bibliotech/user/user-detail
+ng g c pages/bibliotech/user/users-detail
+ng g c components/bibliotech/user/user-update
+ng g c pages/bibliotech/user/users-update
+echo end

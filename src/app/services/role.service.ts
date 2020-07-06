@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Role } from '../models/role.model';
 import { Subject } from 'rxjs';
 
-const baseUrl = 'http://localhost:3000/api/role';
+const baseUrl = 'http://localhost:3000/api/role/';
 
 @Injectable({
   providedIn: 'root'
