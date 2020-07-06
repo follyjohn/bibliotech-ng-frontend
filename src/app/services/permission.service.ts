@@ -1,30 +1,30 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Tag } from '../models/Tag.model';
+import { Permission } from '../models/Permission.model';
 import { Subject } from 'rxjs';
 
-const baseUrl = 'http://localhost:3000/api/tag';
+const baseUrl = 'http://localhost:3000/api/permission';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class TagService {
+export class PermissionService {
 
   constructor(private router: Router,
-              private http: HttpClient) {
+    private http: HttpClient) {
   }
 
-  public tags$ = new Subject<Tag[]>();
-  public tags: Tag[] = [];
+  public permissions$ = new Subject<Permission[]>();
+  public permissions: Permission[] = [];
 
-  getAllTag(){
+  getAllPermission() {
     this.http.get(baseUrl).subscribe(
-      (tags: Tag[]) => {
-        if (tags) {
-          this.tags = tags;
-          this.emitTags();
+      (permissions: Permission[]) => {
+        if (permissions) {
+          this.permissions = permissions;
+          this.emitPermissions();
         }
       },
       (error) => {
@@ -33,11 +33,11 @@ export class TagService {
     );
   }
 
-  emitTags() {
-    this.tags$.next(this.tags);
+  emitPermissions() {
+    this.permissions$.next(this.permissions);
   }
 
-  getTagById(id: string) {
+  getPermissionById(id: string) {
     return new Promise((resolve, reject) => {
       this.http.get(baseUrl + id).subscribe(
         (response) => {
@@ -50,14 +50,12 @@ export class TagService {
     });
   }
 
-  createNewTag(tag: Tag, createdBy: string) {
-    const name = tag.name;
-    const description = tag.description;
+  createNewPermission(permission: Permission, createdBy: string) {
+    const name = permission.name;
     return new Promise((resolve, reject) => {
       this.http.post(baseUrl,
         {
           name,
-          description,
           createdBy
         }
       ).subscribe(
@@ -71,9 +69,9 @@ export class TagService {
     });
   }
 
-  modifyTag(id: string, tag: Tag) {
+  modifyPermission(id: string, permission: Permission) {
     return new Promise((resolve, reject) => {
-      this.http.put(baseUrl + id, tag).subscribe(
+      this.http.put(baseUrl + id, permission).subscribe(
         (response) => {
           resolve(response);
         },
@@ -84,7 +82,7 @@ export class TagService {
     });
   }
 
-  deleteTag(id: string) {
+  deletePermission(id: string) {
     return new Promise((resolve, reject) => {
       this.http.delete(baseUrl + id).subscribe(
         (response) => {

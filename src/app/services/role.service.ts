@@ -1,30 +1,30 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Tag } from '../models/Tag.model';
+import { Role } from '../models/role.model';
 import { Subject } from 'rxjs';
 
-const baseUrl = 'http://localhost:3000/api/tag';
+const baseUrl = 'http://localhost:3000/api/role';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class TagService {
+export class RoleService {
 
   constructor(private router: Router,
               private http: HttpClient) {
   }
 
-  public tags$ = new Subject<Tag[]>();
-  public tags: Tag[] = [];
+  public roles$ = new Subject<Role[]>();
+  public roles: Role[] = [];
 
-  getAllTag(){
+  getAllrole() {
     this.http.get(baseUrl).subscribe(
-      (tags: Tag[]) => {
-        if (tags) {
-          this.tags = tags;
-          this.emitTags();
+      (roles: Role[]) => {
+        if (roles) {
+          this.roles = roles;
+          this.emitroles();
         }
       },
       (error) => {
@@ -33,11 +33,11 @@ export class TagService {
     );
   }
 
-  emitTags() {
-    this.tags$.next(this.tags);
+  emitroles() {
+    this.roles$.next(this.roles);
   }
 
-  getTagById(id: string) {
+  getroleById(id: string) {
     return new Promise((resolve, reject) => {
       this.http.get(baseUrl + id).subscribe(
         (response) => {
@@ -50,14 +50,12 @@ export class TagService {
     });
   }
 
-  createNewTag(tag: Tag, createdBy: string) {
-    const name = tag.name;
-    const description = tag.description;
+  createNewrole(role: Role, createdBy: string) {
+    const name = role.name;
     return new Promise((resolve, reject) => {
       this.http.post(baseUrl,
         {
           name,
-          description,
           createdBy
         }
       ).subscribe(
@@ -71,9 +69,9 @@ export class TagService {
     });
   }
 
-  modifyTag(id: string, tag: Tag) {
+  modifyrole(id: string, role: Role) {
     return new Promise((resolve, reject) => {
-      this.http.put(baseUrl + id, tag).subscribe(
+      this.http.put(baseUrl + id, role).subscribe(
         (response) => {
           resolve(response);
         },
@@ -84,7 +82,7 @@ export class TagService {
     });
   }
 
-  deleteTag(id: string) {
+  deleterole(id: string) {
     return new Promise((resolve, reject) => {
       this.http.delete(baseUrl + id).subscribe(
         (response) => {

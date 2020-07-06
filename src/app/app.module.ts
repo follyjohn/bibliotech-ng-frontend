@@ -33,7 +33,9 @@ import { TagsDetailsComponent } from './pages/bibliotech/tag/tags-details/tags-d
 import { TagService } from 'src/app/services/tag.service';
 import { TagsUpdateComponent } from './pages/bibliotech/tag/tags-update/tags-update.component';
 import { TagUpdateComponent } from './components/bibliotech/tag/tag-update/tag-update.component';
-
+import { DomainService } from './services/domain.service';
+import { RoleService } from './services/role.service';
+import { PermissionService } from './services/permission.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,8 +61,7 @@ import { TagUpdateComponent } from './components/bibliotech/tag/tag-update/tag-u
     TagUpdateComponent
   ],
   imports: [
-
-  BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     MatIconModule,
@@ -69,8 +70,14 @@ import { TagUpdateComponent } from './components/bibliotech/tag/tag-update/tag-u
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-              AuthGuard, TagService],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    AuthGuard,
+    TagService,
+    DomainService,
+    RoleService,
+    PermissionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
