@@ -19,7 +19,7 @@ export class RoleService {
   public roles$ = new Subject<Role[]>();
   public roles: Role[] = [];
 
-  getAllrole() {
+  getAllRole() {
     this.http.get(baseUrl).subscribe(
       (roles: Role[]) => {
         if (roles) {
@@ -70,7 +70,7 @@ export class RoleService {
     });
   }
 
-  modifyrole(id: string, role: Role) {
+  modifyRole(id: string, role: Role) {
     return new Promise((resolve, reject) => {
       this.http.put(baseUrl + id, role).subscribe(
         (response) => {
@@ -83,7 +83,7 @@ export class RoleService {
     });
   }
 
-  deleterole(id: string) {
+  deleteRole(id: string) {
     return new Promise((resolve, reject) => {
       this.http.delete(baseUrl + id).subscribe(
         (response) => {

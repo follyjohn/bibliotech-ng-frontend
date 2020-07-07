@@ -5,5 +5,5 @@ export class Role {
   _id: string;
   name: string;
   createdBy: User;
-  premissions: [Permission];
+  premissions: Array<Permission>;
 }
