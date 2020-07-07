@@ -1,1 +1,40 @@
-<p>permission-list works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <a role="button" routerLink="/permission/new" class="btn btn-primary rounded-sm">
+        new
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container my-4">
+      <table id="table_id" class="display table table-striped table-hover table-borderless" style="width:100%">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Option</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let permission of permissions">
+            <td>{{ permission._id }}</td>
+            <td>{{ permission.name }}</td>
+            <td>
+              <button class="btn btn-outline-danger rounded-lg" (click)="onDeletePermission(permission._id)">D</button>
+              <button class="btn btn-outline-danger rounded-lg ml-1" (click)="openToEditPermission(permission._id)">E</button>
+              <button class="btn btn-outline-danger rounded-lg ml-1" (click)="openToModify(permission._id)">U</button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Option</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>

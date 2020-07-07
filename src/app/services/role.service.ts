@@ -50,12 +50,13 @@ export class RoleService {
     });
   }
 
-  createNewrole(role: Role, createdBy: string) {
+  createNewrole(role: Role, createdBy: string, permissions: string[]) {
     const name = role.name;
     return new Promise((resolve, reject) => {
       this.http.post(baseUrl,
         {
           name,
+          permissions,
           createdBy
         }
       ).subscribe(

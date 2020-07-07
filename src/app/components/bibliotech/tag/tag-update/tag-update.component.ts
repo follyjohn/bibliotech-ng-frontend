@@ -51,7 +51,7 @@ export class TagUpdateComponent implements OnInit {
     this.tagService.modifyTag(this.tag._id, tag).then(
       () => {
         this.updateTagForm.reset();
-        this.router.navigate(['/dashboard/tag']);
+        this.router.navigate(['/tag/list']);
       }
     ).catch(
       (error) => {

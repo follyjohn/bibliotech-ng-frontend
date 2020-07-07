@@ -18,7 +18,7 @@ export class TagListComponent implements OnInit, OnDestroy {
   private tagSub: Subscription;
   private errorMessage: string;
 
-  constructor(private router: Router,private tagService: TagService) { }
+  constructor(private router: Router, private tagService: TagService) { }
   ngOnDestroy(): void {
     this.tagSub.unsubscribe();
   }
