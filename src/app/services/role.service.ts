@@ -37,7 +37,7 @@ export class RoleService {
     this.roles$.next(this.roles);
   }
 
-  getroleById(id: string) {
+  getRoleById(id: string) {
     return new Promise((resolve, reject) => {
       this.http.get(baseUrl + id).subscribe(
         (response) => {
